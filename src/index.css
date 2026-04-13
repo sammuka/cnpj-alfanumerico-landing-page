@@ -1,0 +1,297 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700;800&family=Quicksand:wght@600;700&display=swap');
+
+@import "tailwindcss";
+
+/* ===== DESIGN TOKENS ===== */
+
+@theme {
+  /* Backgrounds */
+  --color-bg-deep: #050510;
+  --color-bg-alt: #08081a;
+  --color-bg-alt2: #0a0a1a;
+  --color-bg-footer: #030308;
+
+  /* Accents */
+  --color-accent-violet: #7c3aed;
+  --color-accent-blue: #3b82f6;
+  --color-accent-cyan: #06b6d4;
+  --color-accent-pink: #ec4899;
+  --color-accent-purple-light: #a78bfa;
+
+  /* Text */
+  --color-text-primary: #f0f0ff;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #475569;
+
+  /* System Colors */
+  --color-ultron: #3b82f6;
+  --color-segbr: #f59e0b;
+  --color-simuladores: #10b981;
+
+  /* Risk Colors */
+  --color-risco-alto: #ef4444;
+  --color-risco-medio: #eab308;
+  --color-risco-baixo: #22c55e;
+
+  /* Decision Colors */
+  --color-ca: #22c55e;
+  --color-da: #eab308;
+  --color-fp: #ef4444;
+  --color-inc: #64748b;
+}
+
+/* ===== LIGHT THEME OVERRIDES ===== */
+
+[data-theme="light"] {
+  --color-bg-deep: #f8f9fc;
+  --color-bg-alt: #f0f1f5;
+  --color-bg-alt2: #e8e9ee;
+  --color-bg-footer: #edeef2;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+}
+
+/* ===== SEMANTIC SURFACE & EDGE UTILITIES ===== */
+
+.surf-2  { background: rgba(255,255,255,0.02); }
+.surf-3  { background: rgba(255,255,255,0.03); }
+.surf-4  { background: rgba(255,255,255,0.04); }
+.surf-5  { background: rgba(255,255,255,0.05); }
+.surf-6  { background: rgba(255,255,255,0.06); }
+.edge-4  { border-color: rgba(255,255,255,0.04); }
+.edge-6  { border-color: rgba(255,255,255,0.06); }
+.edge-8  { border-color: rgba(255,255,255,0.08); }
+.edge-10 { border-color: rgba(255,255,255,0.10); }
+
+[data-theme="light"] .surf-2  { background: rgba(0,0,0,0.02); }
+[data-theme="light"] .surf-3  { background: rgba(0,0,0,0.03); }
+[data-theme="light"] .surf-4  { background: rgba(0,0,0,0.04); }
+[data-theme="light"] .surf-5  { background: rgba(0,0,0,0.05); }
+[data-theme="light"] .surf-6  { background: rgba(0,0,0,0.06); }
+[data-theme="light"] .edge-4  { border-color: rgba(0,0,0,0.06); }
+[data-theme="light"] .edge-6  { border-color: rgba(0,0,0,0.08); }
+[data-theme="light"] .edge-8  { border-color: rgba(0,0,0,0.10); }
+[data-theme="light"] .edge-10 { border-color: rgba(0,0,0,0.12); }
+
+/* ===== BASE ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-secondary);
+  overflow-x: hidden;
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: left;
+  border: none;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== FONT CLASSES ===== */
+
+.font-display {
+  font-family: 'Quicksand', sans-serif;
+  font-feature-settings: 'salt' 1;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ===== GLASSMORPHISM ===== */
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="light"] .glass {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== GRADIENT TEXT ===== */
+
+.gradient-text {
+  background: linear-gradient(135deg, #7c3aed, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== LOGO ADAPTIVE ===== */
+
+.logo-adaptive {
+  filter: brightness(0) invert(1);
+}
+
+[data-theme="light"] .logo-adaptive {
+  filter: brightness(0) invert(0);
+}
+
+/* ===== ORB CONTAINER ===== */
+
+.orb-container {
+  transition: opacity 0.3s ease;
+}
+
+[data-theme="light"] .orb-container {
+  opacity: 0.15;
+}
+
+/* ===== SCROLLBAR (dark) ===== */
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); }
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 3px; }
+
+[data-theme="light"] ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.04); }
+[data-theme="light"] ::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.15); }
+
+/* ===== SECTION DIVIDER ===== */
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+[data-theme="light"] .section-divider {
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.08), transparent);
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes pulse-glow {
+  0%, 100% { text-shadow: 0 0 20px rgba(124, 58, 237, 0.3); }
+  50% { text-shadow: 0 0 40px rgba(59, 130, 246, 0.5), 0 0 80px rgba(124, 58, 237, 0.3); }
+}
+
+@keyframes typing-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(12px); }
+}
+
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+.animate-cursor { animation: typing-cursor 0.8s step-end infinite; }
+.animate-bounce-arrow { animation: bounce-arrow 2s ease-in-out infinite; }
+
+/* ===== MARKDOWN CONTENT (inside modal) ===== */
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4 {
+  font-family: 'Quicksand', sans-serif;
+  color: var(--color-text-primary);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+.markdown-content h1 { font-size: 1.875rem; font-weight: 700; }
+.markdown-content h2 { font-size: 1.5rem; font-weight: 700; }
+.markdown-content h3 { font-size: 1.25rem; font-weight: 600; }
+.markdown-content p { margin-bottom: 1em; line-height: 1.7; }
+.markdown-content ul, .markdown-content ol { margin-left: 1.5em; margin-bottom: 1em; }
+.markdown-content li { margin-bottom: 0.25em; }
+.markdown-content blockquote {
+  border-left: 3px solid var(--color-accent-violet);
+  padding-left: 1rem;
+  color: var(--color-text-muted);
+  margin: 1em 0;
+}
+.markdown-content code:not(pre code) {
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+.markdown-content pre {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+.markdown-content pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.875rem;
+}
+.markdown-content th {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 12px;
+  text-align: left;
+  color: var(--color-text-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.markdown-content td {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.markdown-content a {
+  color: var(--color-accent-blue);
+  text-decoration: none;
+}
+.markdown-content a:hover { text-decoration: underline; }
+.markdown-content hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin: 2em 0;
+}
+
+/* Light markdown overrides */
+[data-theme="light"] .markdown-content code:not(pre code) {
+  background: rgba(0, 0, 0, 0.06);
+}
+[data-theme="light"] .markdown-content pre {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+[data-theme="light"] .markdown-content th {
+  background: rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+[data-theme="light"] .markdown-content td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+[data-theme="light"] .markdown-content blockquote {
+  color: var(--color-text-secondary);
+}
+[data-theme="light"] .markdown-content hr {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ===== GRAIN OVERLAY ===== */
+
+[data-theme="light"] .grain-overlay {
+  opacity: 0.02;
+}
