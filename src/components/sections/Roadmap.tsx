@@ -12,7 +12,7 @@ export default function Roadmap() {
   return (
     <Section id="roadmap">
       <ScrollReveal>
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-text-primary mb-4">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-text-primary mb-4 text-center">
           Roadmap de Implementacao: 5 Waves
         </h2>
       </ScrollReveal>

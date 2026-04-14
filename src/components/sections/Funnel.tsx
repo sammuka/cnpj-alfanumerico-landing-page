@@ -17,7 +17,7 @@ export default function Funnel() {
   return (
     <Section id="funnel">
       <ScrollReveal>
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-text-primary mb-4">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-text-primary mb-4 text-center">
           De 70.729 achados brutos a 6.820 acoes confirmadas
         </h2>
       </ScrollReveal>

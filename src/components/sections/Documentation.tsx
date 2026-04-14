@@ -53,7 +53,7 @@ export default function Documentation() {
   return (
     <Section id="documentation" alt={true}>
       <ScrollReveal>
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-text-primary mb-10">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-text-primary mb-10 text-center">
           Documentacao Tecnica Completa
         </h2>
       </ScrollReveal>

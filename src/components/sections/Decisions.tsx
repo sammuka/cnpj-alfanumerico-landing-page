@@ -156,7 +156,7 @@ export default function Decisions() {
   return (
     <Section id="decisions" alt={true}>
       <ScrollReveal>
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-text-primary mb-4">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-text-primary mb-4 text-center">
           Taxonomia de 15.325 classificacoes assistidas por IA
         </h2>
       </ScrollReveal>
