@@ -11,7 +11,7 @@ export default function Footer() {
             </h3>
             <p className="text-sm text-text-secondary leading-relaxed">
               Analise de impacto completa em 38,5 milhoes de linhas de codigo,
-              identificando 6.820 pontos de alteracao em 9 dias com 33 ferramentas
+              identificando 6.820 pontos de alteracao em 21 dias com 33 ferramentas
               especializadas de IA.
             </p>
           </div>

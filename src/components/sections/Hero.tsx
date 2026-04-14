@@ -103,7 +103,7 @@ export default function Hero() {
       >
         {/* Badge */}
         <motion.div variants={childVariants}>
-          <Badge>Brasilseg &middot; Analise de Impacto &middot; Marco 2026</Badge>
+          <Badge>Brasilseg &middot; Analise de Impacto &middot; Mar&ndash;Abr 2026</Badge>
         </motion.div>
 
         {/* Heading */}
@@ -125,36 +125,63 @@ export default function Hero() {
           variants={childVariants}
           className="max-w-3xl text-lg md:text-xl text-text-secondary"
         >
-          38,5 milh&otilde;es de linhas &nbsp;|&nbsp; 1.086 reposit&oacute;rios &nbsp;|&nbsp; 33 ferramentas &nbsp;|&nbsp; 9 dias
+          33 ferramentas de IA &nbsp;&middot;&nbsp; 6 fases &nbsp;&middot;&nbsp; ULTRON &nbsp;&middot;&nbsp; SEGBR &nbsp;&middot;&nbsp; SIMULADORES
+          <span className="block mt-1 text-base text-text-muted font-mono">
+            18 mar &ndash; 08 abr 2026
+          </span>
         </motion.p>
 
-        {/* Counter cards grid */}
+        {/* Counter cards grid — 2 rows of 3 */}
         <motion.div
           variants={childVariants}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mt-4"
+          className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-5xl mt-4"
         >
-          <GlassCard className="flex flex-col items-center gap-2 py-8">
+          <GlassCard className="flex flex-col items-center gap-2 py-7">
             <AnimatedCounter
               end={38548968}
-              className="font-mono text-4xl md:text-5xl font-extrabold text-text-primary"
+              className="font-mono text-3xl md:text-4xl font-extrabold text-text-primary"
             />
-            <span className="text-sm text-text-secondary">linhas de codigo</span>
+            <span className="text-xs text-text-secondary text-center">linhas de codigo</span>
           </GlassCard>
 
-          <GlassCard className="flex flex-col items-center gap-2 py-8">
+          <GlassCard className="flex flex-col items-center gap-2 py-7">
             <AnimatedCounter
               end={6820}
-              className="font-mono text-4xl md:text-5xl font-extrabold text-text-primary"
+              className="font-mono text-3xl md:text-4xl font-extrabold text-text-primary"
             />
-            <span className="text-sm text-text-secondary">pontos de alteracao</span>
+            <span className="text-xs text-text-secondary text-center">pontos de alteracao</span>
           </GlassCard>
 
-          <GlassCard className="flex flex-col items-center gap-2 py-8">
+          <GlassCard className="flex flex-col items-center gap-2 py-7">
             <AnimatedCounter
               end={97}
-              className="font-mono text-4xl md:text-5xl font-extrabold text-text-primary"
+              className="font-mono text-3xl md:text-4xl font-extrabold text-text-primary"
             />
-            <span className="text-sm text-text-secondary">migracoes SQL</span>
+            <span className="text-xs text-text-secondary text-center">migracoes SQL</span>
+          </GlassCard>
+
+          <GlassCard className="flex flex-col items-center gap-2 py-7">
+            <AnimatedCounter
+              end={1086}
+              className="font-mono text-3xl md:text-4xl font-extrabold text-text-primary"
+            />
+            <span className="text-xs text-text-secondary text-center">repositorios</span>
+          </GlassCard>
+
+          <GlassCard className="flex flex-col items-center gap-2 py-7">
+            <AnimatedCounter
+              end={202795}
+              className="font-mono text-3xl md:text-4xl font-extrabold text-text-primary"
+            />
+            <span className="text-xs text-text-secondary text-center">arquivos analisados</span>
+          </GlassCard>
+
+          <GlassCard className="flex flex-col items-center gap-2 py-7">
+            <AnimatedCounter
+              end={1843}
+              className="font-mono text-3xl md:text-4xl font-extrabold text-text-primary"
+            />
+            <span className="text-xs text-text-secondary text-center">aliases CNPJ</span>
           </GlassCard>
         </motion.div>
 

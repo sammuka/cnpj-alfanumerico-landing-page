@@ -24,7 +24,7 @@ export const DOCS: DocEntry[] = [
   { key: '03', titulo: 'Ferramentas F00-F12', descricao: 'Discovery, deteccao estrutural, SAST, backlog prioritizado', conteudo: doc03, icone: 'Wrench' },
   { key: '04', titulo: 'Ferramentas F13-F22', descricao: 'GAP analysis: formato, utils, semantica, schema, UI', conteudo: doc04, icone: 'Search' },
   { key: '05', titulo: 'Ferramentas F23-F32', descricao: 'Complement, multi-line, SQL model, Semgrep, refinamento', conteudo: doc05, icone: 'Layers' },
-  { key: '06', titulo: 'Rodadas de Execucao', descricao: 'Cronologia dia a dia: 18 a 27 de marco de 2026', conteudo: doc06, icone: 'Calendar' },
+  { key: '06', titulo: 'Rodadas de Execucao', descricao: 'Cronologia dia a dia: 18 de marco a 08 de abril de 2026', conteudo: doc06, icone: 'Calendar' },
   { key: '07', titulo: 'Revisao Agentica F30', descricao: '1.561 batches, taxonomia CONFIRMA/DOWNSTREAM/FP', conteudo: doc07, icone: 'Brain' },
   { key: '08', titulo: 'Resultados e Metricas', descricao: 'Funil 70K→6.8K, distribuicao por sistema e risco', conteudo: doc08, icone: 'BarChart3' },
   { key: '09', titulo: 'Catalogo SQL', descricao: '97 migracoes, 86 tabelas, tipos numericos por coluna', conteudo: doc09, icone: 'Database' },
