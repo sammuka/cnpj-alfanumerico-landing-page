@@ -43,7 +43,7 @@ export const PHASES: PipelinePhase[] = [
   {
     numero: 5,
     nome: 'Revisao Agentica',
-    periodo: '21-27 Mar',
+    periodo: '21 Mar – 08 Abr',
     ferramentas: ['F30'],
     metrica: '1.561 batches, 15.325 achados revisados com IA',
     detalhes: 'Cada batch de ~10 achados foi analisado por IA com contexto de +-30 linhas. A IA classificou cada achado em CONFIRMA_ALTERAR, DOWNSTREAM_ABSORVIDO, FALSO_POSITIVO ou INCONCLUSIVO, com rastreabilidade de cascata entre raiz e downstream.',
@@ -51,7 +51,7 @@ export const PHASES: PipelinePhase[] = [
   {
     numero: 6,
     nome: 'Refinamento',
-    periodo: '27 Mar',
+    periodo: '27 Mar – 08 Abr',
     ferramentas: ['F31', 'F32'],
     metrica: '-110 FPs, +317 TPs → 6.820 backlog final',
     detalhes: 'F31 aplicou heuristicas de fine-tuning para remover 110 falsos positivos remanescentes. F32 reexecutou regras Semgrep refinadas e adicionou 317 verdadeiros positivos. Resultado: 6.820 itens no backlog final.',
