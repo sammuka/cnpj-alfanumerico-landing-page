@@ -2,6 +2,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Orbs from '@/components/ui/Orbs';
 import GrainOverlay from '@/components/ui/GrainOverlay';
+import ParticlesBackground from '@/components/ui/ParticlesBackground';
 import Hero from '@/components/sections/Hero';
 import Problem from '@/components/sections/Problem';
 import Scope from '@/components/sections/Scope';
@@ -16,6 +17,7 @@ import Documentation from '@/components/sections/Documentation';
 export default function App() {
   return (
     <>
+      <ParticlesBackground />
       <Orbs />
       <GrainOverlay />
       <Header />

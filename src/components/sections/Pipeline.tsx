@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, X } from 'lucide-react';
 import Section from '@/components/layout/Section';
 import GlassCard from '@/components/ui/GlassCard';
 import Badge from '@/components/ui/Badge';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { PHASES } from '@/data/pipeline-phases';
+import { TOOLS } from '@/data/tools';
 
 export default function Pipeline() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
@@ -112,6 +113,15 @@ interface PhaseCardProps {
 }
 
 function PhaseCard({ phase, isExpanded, onToggle }: PhaseCardProps) {
+  const [selectedTool, setSelectedTool] = useState<string | null>(null);
+
+  const handleToolClick = (e: React.MouseEvent, toolId: string) => {
+    e.stopPropagation();
+    setSelectedTool((prev) => (prev === toolId ? null : toolId));
+  };
+
+  const toolInfo = selectedTool ? TOOLS[selectedTool] : null;
+
   return (
     <GlassCard className="w-full max-w-lg cursor-pointer" hoverColor="#7c3aed">
       <div onClick={onToggle}>
@@ -127,18 +137,82 @@ function PhaseCard({ phase, isExpanded, onToggle }: PhaseCardProps) {
           </motion.div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2 mb-3">
-          <Badge color="#7c3aed">{phase.periodo}</Badge>
-          {phase.ferramentas.map((tool) => (
-            <Badge key={tool} color="#06b6d4">{tool}</Badge>
-          ))}
-        </div>
-
-        <p className="text-sm font-medium text-accent-cyan">
+        <p className="text-sm font-medium text-accent-cyan mb-3">
           {phase.metrica}
         </p>
       </div>
 
+      {/* Tool badges — outside the toggle div to handle click separately */}
+      <div className="flex flex-wrap items-center gap-2">
+        <span onClick={(e) => e.stopPropagation()}>
+          <Badge color="#7c3aed">{phase.periodo}</Badge>
+        </span>
+        {phase.ferramentas.map((toolId) => (
+          <motion.span
+            key={toolId}
+            onClick={(e) => handleToolClick(e, toolId)}
+            className="cursor-pointer"
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+          >
+            <Badge color={selectedTool === toolId ? '#7c3aed' : '#06b6d4'}>
+              {toolId}
+            </Badge>
+          </motion.span>
+        ))}
+      </div>
+
+      {/* Tool detail panel */}
+      <AnimatePresence>
+        {toolInfo && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="overflow-hidden"
+          >
+            <div
+              className="mt-4 p-4 rounded-xl border edge-8"
+              style={{ background: 'rgba(124,58,237,0.08)' }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-start justify-between gap-2 mb-2">
+                <span className="text-xs font-mono font-bold text-accent-violet">
+                  {toolInfo.id}
+                </span>
+                <button
+                  onClick={(e) => { e.stopPropagation(); setSelectedTool(null); }}
+                  className="text-text-muted hover:text-text-secondary transition-colors"
+                >
+                  <X size={14} />
+                </button>
+              </div>
+              <h4 className="text-sm font-semibold text-text-primary mb-1">
+                {toolInfo.nome}
+              </h4>
+              <p className="text-xs text-text-secondary leading-relaxed">
+                {toolInfo.descricao}
+              </p>
+              {toolInfo.achados && (
+                <span
+                  className="inline-block mt-2 text-xs font-semibold px-2 py-0.5 rounded-full"
+                  style={{
+                    background: 'rgba(6,182,212,0.15)',
+                    border: '1px solid rgba(6,182,212,0.3)',
+                    color: '#06b6d4',
+                  }}
+                >
+                  {toolInfo.achados}
+                </span>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Phase details expansion */}
       <AnimatePresence>
         {isExpanded && (
           <motion.div
