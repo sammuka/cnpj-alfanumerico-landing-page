@@ -31,12 +31,12 @@ export default function ParticlesBackground() {
         particles: {
           number: { value: 55 },
           color: { value: isDark ? '#ffffff' : '#94a3b8' },
-          opacity: { value: isDark ? 0.1 : 0.18 },
+          opacity: { value: isDark ? 0.28 : 0.38 },
           links: {
             enable: true,
             distance: 200,
             color: isDark ? '#ffffff' : '#94a3b8',
-            opacity: isDark ? 0.05 : 0.07,
+            opacity: isDark ? 0.14 : 0.18,
           },
           move: {
             enable: true,
