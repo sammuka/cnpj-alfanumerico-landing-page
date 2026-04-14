@@ -89,10 +89,12 @@ export default function Problem() {
         {cards.map((card) => (
           <motion.div key={card.title} variants={itemVariants}>
             <GlassCard className="flex flex-col gap-4 h-full">
-              <card.icon size={24} className={card.color} />
-              <h3 className="text-lg font-semibold text-text-primary">
-                {card.title}
-              </h3>
+              <div className="flex items-center gap-3">
+                <card.icon size={22} className={`${card.color} flex-shrink-0`} />
+                <h3 className="text-lg font-semibold text-text-primary leading-tight">
+                  {card.title}
+                </h3>
+              </div>
               <CodeBlock code={card.code} language={card.language} />
             </GlassCard>
           </motion.div>
